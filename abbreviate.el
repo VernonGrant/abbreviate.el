@@ -1,42 +1,39 @@
-# Abbreviate.el
+;;; abbreviate.el --- Abbreviates the word at point  -*- lexical-binding: t -*-
 
-**Abbreviates the word at point, using a predefined list of common programming
-abbreviations.** I made this Emacs package because I always forgot certain
-abbreviations, and sometimes the abbreviations I choose to use, difference
-between projects. This basically solves both these problems.
+;; Copyright (C) 2022 by Vernon Grant.
 
-![Abbreviate.el Demo](./img/demo.gif)
+;; Author: Vernon Grant <vernon@ruppell.io>
+;; Version: 1.0.0
+;; Package-Requires: ((emacs "26.1"))
+;; Keywords: abbreviate, package
+;; Homepage: https://github.com/VernonGrant/abbreviate.el
 
-## Manual installation
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
 
-Clone this repository locally, and add the load path to your `.emacs`:
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
 
-```lisp
-(add-to-list 'load-path "/path/to/abbreviate.el/folder/")
-(require 'abbreviate)
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-(global-set-key (kbd "C-c C-a") 'abbr-abbreviate-word-at-point)
+;;; Commentary:
 
-;; Notes:
-;; On Windows, use this path format:
-;; (add-to-list 'load-path "C:\\Users\\your-name\\path\\to\\abbreviate.el\\folder\\")
-```
+;; Abbreviates the word at point, using a predefined list of common programming
+;; abbreviations.
 
-## Usage
+;;; Code:
 
-Basically just move your cursor to the word you want to abbreviate, and press
-your defined keybinding, that calls `abbr-abbreviate-word-at-point`.
+;;;;;;;;;;;;;;;;;;;;;;;
+;; Private Variables ;;
+;;;;;;;;;;;;;;;;;;;;;;;
 
-## Contributions
-
-You can help by contributing more abbreviations by adding them to the predefined
-list `abbr-abbreviations` inside the `abbreviate.el` file. The current available
-abbreviations are:
-
-```lisp
-;; The format is
-;; (word . abbreviation)
-
+;; These common abbreviations where takes from here:
+;; https://github.com/kisvegabor/abbreviations-in-code
 (defvar abbr-abbreviations
   `((abbreviate . abbr)
     (absolute . abs)
@@ -188,6 +185,7 @@ abbreviations are:
     (sine . sin)
     (source . src)
     (square . sqr)
+    (squared . sqr)
     (standard . std)
     (statistics . stat)
     (string . str)
@@ -209,7 +207,34 @@ abbreviations are:
     (window . win)
     (yes . y))
   "All possible abbreviate, abbreviations.")
-```
 
-I took these abbreviations from the from [Abbreviations in program
-codes](https://github.com/kisvegabor/abbreviations-in-code).
+;;;;;;;;;;;;;;;;;;;
+;; Functionality ;;
+;;;;;;;;;;;;;;;;;;;
+
+(defun abbr-abbreviate-word-at-point ()
+  "Abbreviates the word at point, if abbreviation is available."
+  (interactive)
+  (let ((bounds (bounds-of-thing-at-point 'word)))
+    (when bounds
+      (let ((word (word-at-point))
+            (word-sym (intern (downcase (word-at-point)))))
+        (let ((abbr (alist-get word-sym abbr-abbreviations)))
+          (when abbr
+            (let ((abbr-processed (cond
+                                   ;; Is uppercase.
+                                   ((string= (upcase word) word)
+                                    (upcase (symbol-name abbr)))
+                                   ;; Is capitalized.
+                                   ((string= (capitalize word) word)
+                                    (capitalize (symbol-name abbr)))
+                                   ;; Maybe lowercase.
+                                   (t (downcase (symbol-name abbr))))))
+              (delete-region (car bounds) (cdr bounds))
+              (insert abbr-processed)
+              (message "Abbreviated!")))))))
+  (forward-to-word 1))
+
+(provide 'abbreviate)
+
+;;; abbreviate.el ends here
