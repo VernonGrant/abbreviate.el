@@ -16,7 +16,7 @@ Clone this repository locally, and add the load path to your `.emacs`:
 (require 'abbreviate)
 
 ;; Set the default key binding.
-(global-set-key (kbd "C-c C-a") 'abbreviate-word-at-point)
+(global-set-key (kbd "C-c C-c") 'abbreviate-word-at-point)
 
 ;; Add your own abbreviations (all lowercase).
 (abbreviate-insert-abbreviations '(("squared" . "sqr")
