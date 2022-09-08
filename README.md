@@ -2,14 +2,14 @@
 
 **Abbreviates the word at point, using a predefined list of common programming
 abbreviations.** I made this package because I always forget certain
-abbreviations, and the abbreviations I use are not consistent across my
-projects. This package basically solves these issues.
+abbreviations, and the abbreviations I use are inconsistent across code
+bases.
 
 ![Abbreviate.el Demo](https://raw.githubusercontent.com/VernonGrant/abbreviate.el/main/img/demo.gif)
 
 ## Manual installation
 
-Clone this repository locally, and add the load path to your `.emacs`:
+Clone this repository, and add the load path to your `.emacs`:
 
 ```lisp
 (add-to-list 'load-path "/path/to/abbreviate.el/folder/")
@@ -32,7 +32,7 @@ Clone this repository locally, and add the load path to your `.emacs`:
 ## Usage
 
 Basically just move your cursor to the word you want to abbreviate, and press
-your defined keybinding, that calls `abbreviate-word-at-point`. Here a list of
+your defined keybinding that calls `abbreviate-word-at-point`. Here a list of
 the available interactive functions:
 
 | Command                           | Description                                                  |
@@ -46,8 +46,8 @@ above example.
 
 ## Contributions
 
-You can help by contributing more abbreviations by adding them to the predefined
-list `abbreviate-abbreviations` inside the `abbreviate.el` file. The current
+You can contribute by adding additional abbreviations to the predefined list
+`abbreviate-abbreviations` inside the `abbreviate.el` file. The current
 **default abbreviations are**:
 
 ```lisp
