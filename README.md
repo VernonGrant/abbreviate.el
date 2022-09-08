@@ -5,7 +5,7 @@ abbreviations.** I made this Emacs package because I always forgot certain
 abbreviations, and sometimes the abbreviations I choose to use, difference
 between projects. This basically solves both these problems.
 
-![Abbreviate.el Demo](./img/demo.gif)
+![Abbreviate.el Demo](https://raw.githubusercontent.com/VernonGrant/abbreviate.el/main/img/demo.gif)
 
 ## Manual installation
 
