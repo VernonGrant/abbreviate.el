@@ -213,5 +213,5 @@ You can contribute by adding additional abbreviations to the predefined list
   "All possible abbreviate, abbreviations.")
 ```
 
-I took these abbreviations from the from [Abbreviations in program
+I took these default abbreviations from: [Abbreviations in program
 codes](https://github.com/kisvegabor/abbreviations-in-code).
