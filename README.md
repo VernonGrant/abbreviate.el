@@ -35,10 +35,10 @@ Basically just move your cursor to the word you want to abbreviate, and press
 your defined keybinding that calls `abbreviate-word-at-point`. Here a list of
 the available interactive functions:
 
-| Command                           | Description                                                  |
-|-----------------------------------|--------------------------------------------------------------|
-| **abbreviate-list-appreviations** | List all available abbreviations.                            |
-| **abbreviate-word-at-point**      | Abbreviates the word at point, if abbreviation is available. |
+| Command                           | Description                                                       |
+|-----------------------------------|-------------------------------------------------------------------|
+| **abbreviate-list-appreviations** | List all available abbreviations.                                 |
+| **abbreviate-word-at-point**      | Abbreviates the word at point, if it's abbreviation is available. |
 
 You can also define your own abbreviations using the
 `abbreviate-insert-abbreviations` function, inside your init files, see the
