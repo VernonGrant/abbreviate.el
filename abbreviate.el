@@ -161,7 +161,6 @@
     ("required" . "req")
     ("response" . "res")
     ("result" . "res")
-    ("return" . "ret")
     ("revision" . "rev")
     ("selected" . "sel")
     ("selection" . "sel")
