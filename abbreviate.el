@@ -36,7 +36,8 @@
 ;; https://github.com/kisvegabor/abbreviations-in-code
 ;; (setq-default abbriviate-abbreviations )
 (defvar abbriviate-abbreviations
-  `(("absolute" . "abs")
+  `(
+    ("absolute" . "abs")
     ("allocate" . "alloc")
     ("alternate" . "alt")
     ("alternative" . "alt")
@@ -54,6 +55,8 @@
     ("buffer" . "buf")
     ("calculate" . "calc")
     ("callback" . "cb")
+    ("categories" . "cat")
+    ("category" . "cat")
     ("character" . "char")
     ("checksum" . "csum")
     ("circle" . "circ")
@@ -190,7 +193,8 @@
     ("vertical" . "vert")
     ("width" . "w")
     ("window" . "win")
-    ("yes" . "y"))
+    ("yes" . "y")
+    )
   "All possible abbreviate, abbreviations.")
 
 ;;;;;;;;;;;;;;;;;;;
