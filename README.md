@@ -55,7 +55,8 @@ You can contribute by adding additional abbreviations to the predefined list
 ;; (word . abbreviation)
 
 (defvar abbriviate-abbreviations
-  `(("absolute" . "abs")
+  `(
+    ("absolute" . "abs")
     ("allocate" . "alloc")
     ("alternate" . "alt")
     ("alternative" . "alt")
@@ -73,6 +74,8 @@ You can contribute by adding additional abbreviations to the predefined list
     ("buffer" . "buf")
     ("calculate" . "calc")
     ("callback" . "cb")
+    ("categories" . "cat")
+    ("category" . "cat")
     ("character" . "char")
     ("checksum" . "csum")
     ("circle" . "circ")
@@ -209,7 +212,8 @@ You can contribute by adding additional abbreviations to the predefined list
     ("vertical" . "vert")
     ("width" . "w")
     ("window" . "win")
-    ("yes" . "y"))
+    ("yes" . "y")
+    )
   "All possible abbreviate, abbreviations.")
 ```
 
