@@ -122,6 +122,7 @@
     ("length" . "len")
     ("less" . "le")
     ("library" . "lib")
+    ("location" . "loc")
     ("longitude" . "long")
     ("manager" . "mng")
     ("mathematics" . "math")
