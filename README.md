@@ -53,7 +53,6 @@ You can contribute by adding additional abbreviations to the predefined list
 ```lisp
 ;; The format is
 ;; (word . abbreviation)
-
 (defvar abbriviate-abbreviations
   `(
     ("absolute" . "abs")
@@ -136,11 +135,13 @@ You can contribute by adding additional abbreviations to the predefined list
     ("integer" . "int")
     ("integer" . "int")
     ("interface" . "iface")
+    ("instance" . "inst")
     ("language" . "lng")
     ("latitude" . "lat")
     ("length" . "len")
     ("less" . "le")
     ("library" . "lib")
+    ("location" . "loc")
     ("longitude" . "long")
     ("manager" . "mng")
     ("mathematics" . "math")

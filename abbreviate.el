@@ -117,6 +117,7 @@
     ("integer" . "int")
     ("integer" . "int")
     ("interface" . "iface")
+    ("instance" . "inst")
     ("language" . "lng")
     ("latitude" . "lat")
     ("length" . "len")
